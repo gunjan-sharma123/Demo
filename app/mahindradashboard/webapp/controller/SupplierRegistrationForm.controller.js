@@ -9,8 +9,7 @@ sap.ui.define([
         },
         onRegistrationformSubmit:function() 
         {
-          var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			    oRouter.navTo("View1", {} );
+       
 
           var f1 = this.getView().byId('Rfname').setEditable(false);
             console.log(f1);
