@@ -1,16 +1,17 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/odata/v2/ODataModel"
+    "sap/ui/core/mvc/Controller"
   ], (Controller) => {
     "use strict";
   
     return Controller.extend("com.app.mahindradashboard.controller.SupplierRegistrationForm", {
         onInit() {
           this.selectedValues = {}; // Store selected field values
-          this._oModel = new ODataModel("/path/to/your/service");
         },
         onRegistrationformSubmit:function() 
         {
+          var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			    oRouter.navTo("View1", {} );
+
           var f1 = this.getView().byId('Rfname').setEditable(false);
             console.log(f1);
             var l1 = this.getView().byId('Rlname').setEditable(false);
@@ -78,22 +79,7 @@ sap.ui.define([
             var oSendBackButton = this.getView().byId("SendBackButton"); 
             oSendBackButton.setVisible(false);
 
-
-
         }); 
-      },
-      getLastBuyerID: function() {
-        var oModel = this.getView().getModel();
-        oModel.callFunction("/getLastID", {
-          method: "GET",
-          success: function(oData, response) {
-            var lastID = oData; // This is the last ID from the service
-            console.log("Last Buyer ID: ", lastID);
-          },
-          error: function(oError) {
-            console.log("Error fetching last ID: ", oError);
-          }
-        });
       }
     });
   });

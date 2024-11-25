@@ -17,7 +17,7 @@
         <f:SimpleForm editable="false" 
             layout="ColumnLayout"
             id="SimpleForm2"
-            binding="{/Buyer('4a5f8077-c254-4370-9bfa-90a52ce92fa5')}"
+            binding="{/Buyer('7fc5ffac-2356-40b1-a055-20f448370538')}"
             >
 				<f:content>
 					<core:Title text="Title"/>

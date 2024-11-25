@@ -31,6 +31,8 @@ sap.ui.define([
 
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("SupplierRegistrationForm", {} );
+
+            
         },
     });
 });
