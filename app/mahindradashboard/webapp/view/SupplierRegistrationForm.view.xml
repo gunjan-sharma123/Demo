@@ -1,0 +1,50 @@
+<mvc:View controllerName="com.app.mahindradashboard.controller.SupplierRegistrationForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="page1" title="Supplier Registration Form">
+    <MessageStrip
+                id="errormsg"
+                visible="false"
+				text="Please Correct all the red highlighted Fields"
+				type="Error"
+				showIcon="true"
+				showCloseButton="true"
+				class="sapUiMediumMarginBottom">
+	</MessageStrip>
+        <f:SimpleForm editable="false" 
+            layout="ColumnLayout"
+            id="SimpleForm2"
+            binding="{/Buyer('4a5f8077-c254-4370-9bfa-90a52ce92fa5')}"
+            >
+				<f:content>
+					<core:Title text="Title"/>
+					<Label text="First Name" />
+                    <!-- <Text value="{firstName}" enabled="false" ></Text> -->
+					<Input width="100%" id="Rfname" value="{firstName}"/>
+                    <CheckBox id="RfnameCheck" selected="false" visible="false" select="onCheckboxSelect" />
+                    <Label text="Last Name" />
+					<Input width="100%"  id="Rlname" value="{lastName}" />
+                     <CheckBox id="RlnameCheck"  selected="false" visible="false" select="onCheckboxSelect" />
+					<Label text="Email Id" />
+					<Input width="100%" id="Remail" value="{email}"/>
+                     <CheckBox id="RemailCheck"  selected="false" visible="false" select="onCheckboxSelect" />
+                    <Label text="Phone Number" />
+					<Input width="100%" id="Rphone" value="{phone}"/>
+                    <CheckBox id="RphoneCheck"  selected="false" visible="false"  select="onCheckboxSelect" />
+
+				</f:content>
+			</f:SimpleForm>
+
+            <!-- Buttons outside of SimpleForm -->
+        <HBox width="100%" justifyContent="End">
+            <Button icon="sap-icon://action" text="Send Back" id="SendBackButton" press="onSendBack" ariaLabelledBy="editButtonLabel"  visible="false" />
+            <Button icon="sap-icon://action" text="Submit" press="onRegistrationformSubmit" ariaLabelledBy="editButtonLabel"/>
+            <Button icon="sap-icon://action" text="OnBoarding" press="onBoardingSubmit" ariaLabelledBy="editButtonLabel"  visible="false" />
+        </HBox>
+
+
+    </Page>
+</mvc:View>

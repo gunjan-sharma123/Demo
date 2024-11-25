@@ -1,0 +1,127 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.app.mahindradashboard",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.5",
+      "toolsId": "a322fd86-f55e-4b00-9999-f29410c4fcd9"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v2/supplieronboarding/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.130.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.app.mahindradashboard.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "clearTarget": false,
+        "path": "com.app.mahindradashboard.view"
+      },
+      "routes": [
+        {
+            "name": "View1",
+            "pattern": "",
+            "target": "View1"
+            
+        },
+        {
+            "name": "SupplierRegistrationForm",
+            "pattern": "SupplierRegistrationForm",     
+            "target": "SupplierRegistrationForm"
+        }
+    ],
+      "targets": {
+        "View1": {
+          "viewName": "View1",
+          "viewLevel": 1
+        },
+        "SupplierRegistrationForm": {
+          "viewName": "SupplierRegistrationForm",
+          "viewLevel": 2
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.app.mahindradashboard.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "com.approuter"
+  }
+}

@@ -1,0 +1,27 @@
+<mvc:View controllerName="com.app.mahindradashboard.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+    <f:SimpleForm editable="false" 
+    layout="ColumnLayout"
+    id="SimpleForm"
+    >
+				<f:content>
+					<core:Title text="Title"/>
+					<Label text="Enter Your First Name" />
+					<Input width="100%" id="fname" placeholder="Enter Your First Name"/>
+                    <Label text="Enter Your Last Name" />
+					<Input width="100%"  id="lname" placeholder="Enter Your Last Name" />
+					<Label text="Enter Your Email Id" />
+					<Input width="100%" id="email" placeholder="Enter Your Email Id"/>
+                    <Label text="Enter Your Phone Number" />
+					<Input width="100%" id="phone" placeholder="Enter Your Phone Number"/>
+
+                    <Button icon="sap-icon://action" text="Submit" press="onSubmit" ariaLabelledBy="editButtonLabel"/>
+				</f:content>
+			</f:SimpleForm>
+    </Page>
+</mvc:View>

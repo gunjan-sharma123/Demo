@@ -1,0 +1,13 @@
+##### Get top 2 records
+GET http://localhost:4004/odata/v4/supplieronboarding/Buyer
+
+##### Insert new record in table using Post Method 
+POST http://localhost:4004/odata/v4/supplieronboarding/Buyer
+Content-Type: application/json
+
+{ 
+      "firstName": "gunjan",
+      "lastName": "sharma",
+      "email": "gunjan.designer25@gmail.com",
+      "phone": "9560355824"
+}
